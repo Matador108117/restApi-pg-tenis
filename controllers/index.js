@@ -59,12 +59,15 @@ const updateSneaker = async (req, res) => {
             const sneaker = await models.Sneaker.findOne({ where: { id: req.params.id } });
             if (sneaker) {
                     console.log(sneaker);
-                    sneaker.name = req.body.name; 
+                    sneaker.name = req.body.name;
                     sneaker.price  = req.body.price;
                     sneaker.description = req.body.description;
                     sneaker.brand = req.body.brand;
                     sneaker.size = req.body.size;
                     sneaker.image = req.body.image;
+                    sneaker.color = req.body.color;
+                    sneaker.sex = req.body.sex;
+                    
                     await sneaker.save();
             }
             else {
